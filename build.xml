@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="LuxSDK" default="compile" basedir=".">
+
+	<!-- Edit these 2 properties to fit into your build environment. 
+		 Then you will be able to run the 'ant dist' command to re-compile 
+		 and deploy your agent to where Lux will find it. -->
+	<property name="built_agent_file" location="build/com/sillysoft/lux/agent/YourAgentName.class" />
+	<property name="lux_agent_folder" location="${user.home}/Library/Application Support/Lux/Agents/" />
+  
+  
+	<!-- Move your agent class into Lux's agent folder -->
+	<target name="dist" depends="compile">
+		<copy file="${built_agent_file}" todir="${lux_agent_folder}"/>
+	</target>
+
+
+	<!-- Clean all build products -->
+	<target name="clean">
+		<delete dir="build"/>
+	</target>
+
+	<!-- Compile the java files into their .class files -->
+	<target name="compile">
+		<mkdir dir="build"/>
+		<javac srcdir="src" destdir="build"
+			debug="true" 
+			debuglevel="lines,vars,source" 
+			/>
+	</target>
+
+	<!-- if you don't need Java 5 features, 
+	you can support OSX 10.3 users with Java 1.4 compat -->
+	<target name="compile1.4">
+		<mkdir dir="build"/>
+		<javac srcdir="src" destdir="build"
+			debug="true" 
+			debuglevel="lines,vars,source" 
+			compiler="javac1.4"
+			target="1.4"
+			source="1.4"/>
+	</target>
+
+</project>

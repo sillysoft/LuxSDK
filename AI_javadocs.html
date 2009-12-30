@@ -1,0 +1,55 @@
+<html><head><title>LuxSDK AI Javadocs Information</title></head>
+
+<body>
+
+<table width=600 align=center><TR><TD>
+<P align=center>
+<font size="+2">LuxSDK AI Javadocs Information</font>
+<P>
+
+For a full listing of javadoc infomation visit the <a href="javadocs/index.html">Javadoc Overview</a>. Here are some pointers to the more interesting classes:
+<P>
+<b><a href="javadocs/com/sillysoft/lux/Board.html">Board</a></b><BR>
+The Board is the connection between the game world and agents. Commands such as choosing countries or attacking are all ordered through calls to the Board during the proper turn phase. The Board also contains some methods for querying the game state and parameters. When initialized, each agent is sent a reference to a Board object to interact with.
+<P>
+An important data structure available through the Board is the array of <a href="javadocs/com/sillysoft/lux/Country.html">Country</a>'s in the game. Available through the getCountries() method, this array contains all aspects of the current board position.
+<P>
+<B><a href="javadocs/com/sillysoft/lux/Country.html">Country</a></b><BR>
+A Country instance represents a single territory in the game. 
+<P>
+Each Country contains a number of integer values, namely a country-code, continent-code, owner-code, number of armies, and number of fortifyable armies. As well, each Country stores information about which other Country's are adjacent to it.
+<P>
+The country-code is a unique number used to identify countries. The array returned by the Board.getCountries() will always be ordered by country-code.
+<P>
+<B><a href="javadocs/com/sillysoft/lux/Card.html">Card</a></b><BR>
+The Card class provides a data structure for representing cards, as well as some methods for determining sets.
+
+
+<P>
+<B><a href="javadocs/com/sillysoft/lux/util/BoardHelper.html">BoardHelper</a></b><BR>
+A collection of static helper methods for deriving information from a board position or finding paths in the graph of countries. These can be used with any set of Country objects.
+<P>
+<B><a href="javadocs/com/sillysoft/lux/util/CountryRoute.html">CountryRoute</a></b>, <B><a href="javadocs/com/sillysoft/lux/util/CountryCluster.html">CountryCluster</a></b> and <B><a href="javadocs/com/sillysoft/lux/util/CountryClusterSet.html">CountryClusterSet</a></b> are 3 new object oriented classes for paths, clusters, and cluster sets.<BR>
+<P>
+As well, a number of concrete <a href="javadocs/com/sillysoft/lux/util/CountryIterator.html">CountryIterator</a> subclasses exist for agents to use. Use the constructor containing a CountryIterator in order to chain multiple conditions together. For example <pre>    new PlayerIterator(1, new ContinentIterator(2))</pre> will give an enumeration of all countries owned by player 1 in continent 2.
+<P>
+<B><a href="javadocs/com/sillysoft/lux/util/ArmiesIterator.html">ArmiesIterator</a></b><BR>
+Enumerates through all the countries that contain a minimum amount of armies and are owned by a certain player.
+<P>
+<B><a href="javadocs/com/sillysoft/lux/util/ClusterBorderIterator.html">ClusterBorderIterator</a></b><BR>
+Enumerates through all the countries that are on the border of a cluster.
+<P>
+<B><a href="javadocs/com/sillysoft/lux/util/ContinentIterator.html">ContinentIterator</a></b><BR>
+Enumerates through all the countries that are inside a certain continent.
+<P>
+<B><a href="javadocs/com/sillysoft/lux/util/NeighborIterator.html">NeighborIterator</a></b><BR>
+Enumerates through all the neigbor countries of a given country.
+<P>
+<B><a href="javadocs/com/sillysoft/lux/util/PlayerIterator.html">PlayerIterator</a></b><BR>
+Enumerates through all the countries owned by a certain player.
+
+<P align=center>
+<a href="AI_home.html">LuxSDK AI Main Page</a>
+
+</td></tr></table>
+</body></html>

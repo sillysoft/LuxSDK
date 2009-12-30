@@ -1,0 +1,86 @@
+<html><head><title>LuxSDK AI Info</title></head>
+
+<body>
+<table width=600 align=center><TR><TD>
+<P align=center>
+<font size="+2">LuxSDK AI Info</font>
+<P>
+This SDK contains everything you need to write your own computer AI for Lux. The SDK uses the Java programming language and is made up of a series of public API as well as examples (the source for all the AIs that come with Lux are included).
+<P>
+<B>The LuxAgent Interface</b><BR>
+Lux is written in Java, and each agent is just a class that implements the <a href="javadocs/com/sillysoft/lux/agent/LuxAgent.html">LuxAgent</a> interface. The interface comes with lots of comments, and should probably be the first thing you examine.
+<P>
+If you are unfamiliar with java interfaces, it is basically just a list of function prototypes. To write a class that implements the interface, you just fill in the code for all of the prototypes.
+<P>
+<B>The Lux API</b><BR>
+Other then the LuxAgent interface, agents must interact with Lux. This is done using the public Lux API. Have a look at the <a href="AI_javadocs.html">Lux API javadocs</a> to see what is available.
+<P>
+<B>Examples</b><BR>
+The source code of many Lux agents are included. Details can be found on the <a href="AI_examples.html">example agents page</a>. The code is licensed to you either under the GNU GPL or free for non profit use (your choice).
+<P>
+<B>To Compile</b><BR>
+Method #1: Use the included apache ant build.xml file to build using ant.<br>
+Method #2: Copy the java files inside src into your preferred IDE.<br>
+<P>
+<B>Finishing Up</b><BR>
+Once you have finished writing an agent, place your compiled .class file into ~/Library/Application Support/Lux/Agents/ (for Mac OS X users) or into the Support/Agents/ folder where you installed Lux (i.e. C:/Program Files/Lux/Support/Agents/). Your agent should now appear in the agent select-boxes when Lux is run. If you use ant to compile then modify the build.xml file to specify your support folder and you can automatically move the newly compiled file into place.
+<P>&nbsp;<P>
+<B>Random Notes:</b><BR>
+Often I will talk of a 'cluster', usually specified by a root country. A cluster is a group of countries that all have the same owner and can all be reached from each other.
+<P>
+When Lux is running, all method calls into agents are inside try/catch statements. This means that errors within agents will not cause Lux to crash. Whenever an exception is caught it is printed to standard out including a stacktrace.
+<P>
+As well, a message is printed to standard out whenever an agent sends an improper command. (eg. it tries to attack a country that it owns)
+<P>
+(Under MacOS X, standard out of all the running applications can be seen with the Console application, located in /Applications/Utilities/ 
+<P>
+For testing purposes it is sometimes useful to run game after game after game... Start Lux from the command line and pass it the -superfast option to get a mode that uses less graphics. You'll still have to start a game and turn on the Autoplay feature from the Game menu. The Autoplay setting doesn't save itself, so it must be set each time you run Lux.
+<P>
+You can find other BotMasters and discussion in Lux's <a href="http://sillysoft.net/forums/viewforum.php?f=9">Robot House Forum</a>.
+<P>&nbsp;<P>
+Thank you very much for downloading this SDK. If you have any questions/comments please let me know.
+<P>&nbsp;<P>
+Your friend in world domination,<BR>
+Dustin Quasar Sacks<BR>
+<a href="mailto:dustin@sillysoft.net">dustin@sillysoft.net</a>
+
+<P>
+<B>Changes to go along with Lux 5.6</b><BR>
+- Added the method Board.getAgentPath().<br>
+- Added the getDefensibleBorders(), getDefensibleBordersBeyond(), and getAttackList() methods to the BoardHelper class to deal with 1-way connections better. Thanks to Bertrand for the code.<br>
+- Added more example map generator sources. Thanks to GregM for the code.<br>
+<P>
+<B>Changes to go along with Lux 5.3</b><BR>
+- Added the methods getCardProgression(), getContinentIncrease(), getTurnSecondsLeft(), getTurnCount().<br>
+- Merged the MapGenerator SDK with the Agent SDK, and include the source for the built-in map generator.
+<P>
+<B>Changes to go along with Lux 5.2</b><BR>
+- Added the Killbot, BetterPixie, and Vulture AI examples.<br>
+- Added CountryRoute, CountryCluster and CountryClusterSet to the API.<br>
+- Placed the API into packages.<br>
+- Added board.playAudioAtURL(String URL) for an agent to play audio.<br>
+- Enhanced the ability of agents to chat and emote in Board.<br>
+- Added the ability for agents to check the full card progression info, as well as the continent increase.<br>
+- Agents now get notified through of chat and emotes through the message() method.<br>
+<P>
+<B>Changes to go along with Lux 4.5</b><BR>
+- Added some storage get/put methods to the Board class. These can be used to save data into persistent storage across runs of Lux.<br>
+- Fixed bugs in BoardHelper.getContinentBordersBeyond(), BoardHelper.easyCostBetweenCountries(), CountryStack.size()<br>
+<p>
+<B>Changes to go along with Lux 4.4</b><BR>
+- Added some methods to the Board class:
+<pre>
+    String getContinentName(int contCode)
+    int getNextCardSetValue()
+    boolean transferCards()
+    boolean immediateCash()</pre>
+- Added some methods to the BoardHelper class to deal with negative continents. Also some example agents were updated to use these:
+<pre>
+    static int getSmallestPositiveEmptyCont(Country[] countries, Board board)
+    static int getSmallestPositiveOpenCont(Country[] countries, Board board)</pre>
+    <P>
+See the javadocs for details.
+
+</td></tr></table>
+
+</body></html>

@@ -1,0 +1,34 @@
+<html><head><title>LuxSDK AI Examples</title></head>
+
+<body>
+
+
+<table width=600 align=center><TR><TD>
+<P align=center>
+<font size="+2">LuxSDK AI Examples</font>
+<P>
+
+The source code for all of the example agents come included with this SDK inside the 'src/com/sillysoft/lux/agent' directory. You are free to use this code for non-profit purposes.
+<P>
+The example AIs aren't HTML formatted, so I won't link to them. They are all java classes with lots of comments. Meant to be viewed in your text editor of choice.
+<P>
+I recommend that you look at Angry.java first for an example of a simple agent. That should give you a good idea of how  agents interact with Lux's API.
+<P>
+After that, you probably want to take a gander at SmartAgentBase.java which is a utility superclass used by all of my more advanced agents.
+<P>
+Cluster.java is a good example of a subclass of SmartAgentBase. The general strategy of Cluster is to work on expanding a cluster of Countries. Subclasses improve on his behavior by limiting their attacks, or trying to focus them better. Subclasses of Cluster include: Shaft, Quo, Yakool, and Boscoe.
+<P>
+Pixie.java is based on a totally different premise from the Cluster-family. She examines each continent seperately, and decides which ones she has a chance of taking over. Then she will place armies and attack in those continents. EvilPixie and BetterPixie use the same technique as Pixie, with BetterPixie being the most advanced.
+<P>
+Killbot.java is an agent that uses the behavious of Vulture.java to eliminate weak players. Killbot pairs up Vulture and BetterPixie behaviour.
+
+<P>
+I am not an AI researcher or anything like that, so I haven't tried out any of the classical AI methodologies. Most of my agents are simply based upon my personal strategies for playing Risk.
+
+<P align=center>
+<a href="AI_home.html">LuxSDK AI Main Page</a>
+
+</td></tr></table>
+
+
+</body></html>

@@ -1,0 +1,42 @@
+<html><head><title>LuxSDK Map Generator Info</title></head>
+
+<body>
+<table width=600 align=center><TR><TD>
+<P align=center>
+<font size="+2">LuxSDK Map Generator Info</font>
+<P>
+Contained herein is all the info you need to write a map generator plugin for Lux.
+<P>
+<B>The LuxMapGenerator Interface</b><BR>
+Lux is written in Java, and each MapGenerator is just a class that implements the LuxMapGenerator interface. The interface comes with comments, and should probably be the first thing you examine. You can have the <a href="src/com/sillysoft/lux/LuxMapGenerator.java">source</a> or <a href="javadocs/com/sillysoft/lux/LuxMapGenerator.html">javadoc</a>.
+<P>
+If you are unfamiliar with java interfaces, it is basically just a list of function prototypes. To write a class that implements the interface, you just fill in the code for all of the prototypes.
+<P>
+<B>The MapLoader class</b><BR>
+Other then the LuxMapGenerator interface, MapGenerators have to know about the MapLoader class. It contains some functions that your MapGenerator can use. You can see the <a href="javadocs/com/sillysoft/lux/MapLoader.html">javadoc</a> or <a href="src/com/sillysoft/lux/MapLoader.java">stub</a> of this class.
+<P>
+<B>Examples</b><BR>
+
+<ol><li>RandomMapGenerator (<a href="javadocs/com/sillysoft/lux/RandomMapGenerator.html">javadoc</a> or <a href="src/com/sillysoft/lux/RandomMapGenerator.java">source</a>) is the class that Lux uses to create the built-in tiny-huge maps. AKA the "potato-shape" generator.
+<P>
+<li>ExternalMapGenerator is a class that delegates all of the work to the accompanying perl script 'luxmap.pl'. You must make sure that the script is executable for it to work (chmod 755 luxmap.pl)
+<P>
+<li><a href="src/org/mcglynns/lux/CastleInfinity.java">CastleInfinity</a>, <a href="src/org/mcglynns/lux/HexInfinity.java">HexInfinity</a>, and <a href="src/org/mcglynns/lux/IslandInfinity.java">IslandInfinity</a> are map generators written by Greg Mcglynns.
+</ol>
+<P>
+<B>To Compile</b><BR>
+In order to compile your LuxMapGenerator class, you must have a java compiler on your computer. The SDK comes with an apache ant build file that you can use, or you can copy the src files into your preferred IDE.
+<P>
+<B>Installing</b><BR>
+Once you have finished writing a MapGenerator, place your compiled .class file into ~/Library/Application Support/Lux/MapGenerators/ (for Mac OS X users) or into the Support/MapGenerators/ folder where you installed Lux (i.e. C:/Program Files/Lux/Support/MapGenerators/). Your MapGenerator choices should now appear in the map selection menu the next time you run Lux.
+<P>
+<b>Thank You</b><BR>
+If you have any questions/comments please let me know.
+<P>
+Your friend in world domination,<BR>
+Dustin Quasar Sacks<BR>
+<a href="mailto:dustin@sillysoft.net">dustin@sillysoft.net</a>
+<P>&nbsp;<P>
+</td></tr></table>
+
+</body></html>
